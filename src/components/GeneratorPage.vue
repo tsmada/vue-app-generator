@@ -14,8 +14,8 @@
       </span>
       <transition name="fade" mode="in-out" appear>
         <div id="results" class="w-auto p-5 transition-transform duration-900 max-h-full ease-in" v-if="searchText">
-          <div id="content" class="m-1 p-1" v-for="(appidea, index) in industries" :key="appidea">
-            <p>{{index +1}} {{ appidea }}</p>
+          <div id="content" class="m-1 p-1" v-for="(appidea, index) in industries" :key="index">
+            <p class="text-base">{{appidea}}</p>
           </div>
         </div>
       </transition>
@@ -32,9 +32,12 @@ export default {
   props: {
     searchText: String,
     loading: Boolean,
+    buttontext: String,
   },
   data() {
     return {
+      results: [
+      ],
     }
   },
   computed: {
@@ -42,10 +45,13 @@ export default {
       results: state => state.results,
     }),
     industries() {
-      return industrydata.map((item) => {
-        if (item["INDEX ITEM DESCRIPTION"].indexOf(this.searchText) != -1)
-        return item["INDEX ITEM DESCRIPTION"]
-      })
+      var results = industrydata.reduce((result, item) => {
+        if (item["INDEX ITEM DESCRIPTION"].indexOf(this.searchText) != -1) {
+          result.push(item["INDEX ITEM DESCRIPTION"])
+        }
+        return result;
+      }, []);
+      return results;
     }
   }
 }
