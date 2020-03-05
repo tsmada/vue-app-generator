@@ -4,6 +4,10 @@
 
 NAICS Code used as the basis for idea generation. Users can enter filter criteria to match against and return candidate application ideas. Algo uses Google Trends, Industry Data and a preset list to operate.
 
+## Demo Site
+
+http://vue-app-generator-2-gdilbvzn6.now.sh
+
 ## Project setup
 ```
 npm install vue-app-generator
