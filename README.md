@@ -7,6 +7,7 @@ NAICS Code used as the basis for idea generation. Users can enter filter criteri
 ## Demo Site
 
 http://vue-app-generator-2-gdilbvzn6.now.sh
+https://vue-app-generator-2.now.sh/
 
 ## Project setup
 ```
