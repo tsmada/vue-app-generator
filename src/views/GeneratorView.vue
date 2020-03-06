@@ -12,14 +12,12 @@
           type="button"
           class="border rounded outline-none p-4 hover:cursor-pointer m-1 hover:bg-gray-200 focus:outline-none">Submit <img class="inline-block" src="https://icon.now.sh/done" /></button>
       </span>
-      <transition name="fade" mode="in-out" appear>
-        <div id="results" class="w-auto p-5 transition-transform duration-900 max-h-full ease-in" v-if="searchText">
-          <div id="content" class="m-1 p-1" v-for="(appidea, index) in results" :key="index">
-            <p class="text-base">{{appidea}}</p>
-            
-          </div>
+      <div id="results" class="w-auto p-5 transition-transform duration-900 max-h-full ease-in" v-if="searchText">
+        <div id="content" class="m-1 p-1" v-for="(appidea, index) in industries" :key="index">
+          <p class="text-base">{{appidea}}</p>
+          
         </div>
-      </transition>
+      </div>
     </div>
   </div>
 </template>
@@ -38,21 +36,20 @@ export default {
   },
   data() {
     return {
-      results: [],
+      results: [
+      ],
       searchText: '',
     }
   },
   computed: {
     industries() {
-      var vm = this
-      var dataResults = industrydata.reduce((result, item) => {
+      var results = industrydata.reduce((result, item) => {
         if (item["INDEX ITEM DESCRIPTION"].indexOf(this.searchText) != -1) {
           result.push(item["INDEX ITEM DESCRIPTION"])
         }
         return result;
       }, []);
-      vm.results = dataResults;
-      return dataResults;
+      return results;
     },
   }
 }
