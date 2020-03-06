@@ -25,7 +25,7 @@
           <p class="text-base hover:cursor-pointer">{{appidea}}</p>
         </div>
         <p v-if="loading" class="text-base">Loading...</p>
-        <p v-show="!results" class="text-base">No ideas could be generated. Why don't you use that big brain?</p>
+        <p v-show="!results || !results.length" class="text-base">No ideas could be generated. Why don't you use that big brain?</p>
       </div>
     </div>
   </div>
