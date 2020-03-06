@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import GeneratorPage from './components/GeneratorPage.vue'
+import GeneratorPage from './views/GeneratorView.vue'
 
 export default {
   name: 'App',
