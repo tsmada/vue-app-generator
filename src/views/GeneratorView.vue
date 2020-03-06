@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-sm mx-auto flex p-6 bg-gray rounded-lg shadow-xl">
+  <div class="max-w-md mx-auto flex p-6 bg-gray rounded-lg shadow-xl">
     <div class="m-1 pt-1">
       <h4 class="text-xl text-black-900 leading-tight text-center text-bold">Generate App Idea</h4>
       <p class="p-4"/>
